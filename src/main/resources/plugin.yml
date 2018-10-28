@@ -1,0 +1,7 @@
+name: megakilof
+version: x1.2
+main: pl.daffit.megakilof.MegaKilofPlugin
+author: Daffit
+commands:
+  megakilof: {}
+  dajkilofa: {}
