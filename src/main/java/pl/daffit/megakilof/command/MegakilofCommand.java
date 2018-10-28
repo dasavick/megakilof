@@ -1,6 +1,5 @@
 package pl.daffit.megakilof.command;
 
-import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -9,21 +8,21 @@ import pl.daffit.megakilof.MegaKilofPlugin;
 
 public class MegakilofCommand implements CommandExecutor {
 
-    private final MegaKilofPlugin mega;
+    private final MegaKilofPlugin megaPlugin;
 
-    public MegakilofCommand(MegaKilofPlugin mega) {
-        this.mega = mega;
+    public MegakilofCommand(MegaKilofPlugin megaPlugin) {
+        this.megaPlugin = megaPlugin;
     }
 
     @Override
-    public boolean onCommand(CommandSender mega, Command kilof, String jest, String[] megaa) {
+    public boolean onCommand(CommandSender megaSender, Command megaCommand, String megaLabel, String[] megaArguments) {
 
-        if (!(mega instanceof Player)) {
-            mega.sendMessage(ChatColor.translateAlternateColorCodes('&', "&cKonsola Nie Moze Kilofa"));
+        if (!(megaSender instanceof Player)) {
+            megaSender.sendMessage(MegaKilofPlugin.CONSOLE_DENY_MESSAGE);
             return true;
         }
 
-        ((Player) mega).openInventory(this.mega.getMegaInventory());
+        ((Player) megaSender).openInventory(this.megaPlugin.getMegaInventory());
         return true;
     }
 }
