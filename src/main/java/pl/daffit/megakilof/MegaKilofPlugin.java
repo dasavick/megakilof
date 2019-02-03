@@ -77,6 +77,10 @@ public class MegaKilofPlugin extends JavaPlugin implements Listener {
     @EventHandler
     public void onInventoryClickEvent(InventoryClickEvent megaEvent) {
 
+        if (megaEvent.getClickedInventory() == null) {
+            return;
+        }
+
         if (megaEvent.getRawSlot() != megaEvent.getSlot()) {
             return;
         }
