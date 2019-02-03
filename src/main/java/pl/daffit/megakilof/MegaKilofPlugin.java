@@ -81,6 +81,10 @@ public class MegaKilofPlugin extends JavaPlugin implements Listener {
             return;
         }
 
+        if (megaEvent.getClickedInventory() == null) {
+            return;
+        }
+
         if (!MEGA_GUI_TITLE.equals(megaEvent.getClickedInventory().getName())) {
             return;
         }
